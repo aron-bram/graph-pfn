@@ -44,8 +44,6 @@ pip install torch_scatter==2.1.2 torch-sparse==0.6.17 -f https://data.pyg.org/wh
 pip install git+https://github.com/aron-bram/PFNs@f875a21
 pip install matplotlib
 ```
-```sh
-```
 Optionally install dev tools:
 ```sh
 pip install pytest ruff black isort
