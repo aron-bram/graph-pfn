@@ -54,7 +54,7 @@ pip install pytest ruff black isort
 To ensure everything is set up correctly, run:
 ```sh
 cd scripts
-python train.py --pfn_epochs 2 --pfn_steps_per_epoch 1
+python train_pfn.py --pfn_epochs 2 --pfn_steps_per_epoch 1
 ```
 You should see the following output at the end of the run:
 ```sh
