@@ -1,7 +1,7 @@
 # Graph-PFN
 
 Graph-PFN is a Python project for graph-based PFNs (Prior-Fitted Networks).  
-This repository provides utilities for training and evaluating PFNs and other models such as Graph Neural Networks (GNNs) using `torch`, `torch_geometric`, and other dependencies.
+This repository provides scripts for training and evaluating PFNs and other models such as Graph Neural Networks (GNNs) using `torch`, `torch_geometric`, and other dependencies.
 
 ---
 
