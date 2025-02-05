@@ -93,6 +93,12 @@ To train and evaluate other models on benchmarks:
 cd scripts
 python train_eval_baselines.py
 ```
+
+### Understanding scripts
+Refer to the respective script's documentation at the top of the .py file for more detail on requirements, output, and explanation of what each script does. For example, a comprehensive explanation on how the PFN is trained on the prior can be found in train_pfn.py.
+
+Each script accepts its own arguments to customize the run, and each argument is documented in the code.
+
 ### Run Tests
 
 To run all tests using pytest:
