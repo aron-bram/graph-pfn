@@ -17,7 +17,7 @@ cd graph-pfn
 
 It is recommended to use a virtual environment to manage dependencies:
 ```sh
-python3.10 -m venv venv  # NOTE that I only tested the installation with pytho 3.10
+python3.10 -m venv venv  # NOTE that I only tested the installation with python version 3.10
 source venv/bin/activate
 ```
 ### 3. Install Dependencies
@@ -78,25 +78,29 @@ graph-pfn/
 
 To start training a PFN model:
 ```sh
+cd scripts
 python scripts/train_pfn.py
 ```
 ### Evaluate a Model
 
 To start evaluating a trained PFN model:
 ```sh
-python scripts/evaluate_pfn.py
+cd scripts
+python evaluate_pfn.py
 ```
 ### Train and evaluate baselines
 
 To train and evaluate other models on benchmarks:
 ```sh
-python scripts/train_eval_baselines.py
+cd scripts
+python train_eval_baselines.py
 ```
 ### Run Tests
 
 To run all tests using pytest:
 ```sh
-pytest tests
+cd tests
+pytest test_sampler.py
 ```
 ## ⚙️ Troubleshooting
 
