@@ -33,7 +33,6 @@ from torch_geometric.datasets import (Actor, Amazon, HeterophilousGraphDataset,
                                       Planetoid, Twitch, WebKB, WikiCS,
                                       WikipediaNetwork)
 from torch_geometric.nn import GCN, MLP
-
 from utils import Output, data_split, equalize_splits
 
 transform = T.Compose([T.ToSparseTensor()])
