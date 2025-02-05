@@ -17,9 +17,8 @@ cd graph-pfn
 
 It is recommended to use a virtual environment to manage dependencies:
 ```sh
-python -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate     # On Windows
+python3.10 -m venv venv  # NOTE that I only tested the installation with pytho 3.10
+source venv/bin/activate
 ```
 ### 3. Install Dependencies
 
@@ -27,19 +26,45 @@ Ensure you have the latest version of pip, setuptools, and wheel:
 ```sh
 pip install --upgrade pip setuptools wheel
 ```
-Then, install the required dependencies:
+When running on a CPU, install the following dependencies:
 ```sh
-pip install -r requirements.txt
+pip install --upgrade pip setuptools wheel
+pip install torch==2.1.1 --index-url https://download.pytorch.org/whl/cpu
+pip install torch_geometric==2.4.0
+pip install torch_scatter==2.1.2 torch-sparse==0.6.17 -f https://data.pyg.org/whl/torch-2.1.1+cpu.html
+pip install git+https://github.com/aron-bram/PFNs@f875a21
+pip install matplotlib
+```
+Alternatively, when running on GPU with cuda 11.8 support, run these commands instead:
+```sh
+pip install --upgrade pip setuptools wheel
+pip install torch==2.1.1 --index-url https://download.pytorch.org/whl/cu118
+pip install torch_geometric==2.4.0
+pip install torch_scatter==2.1.2 torch-sparse==0.6.17 -f https://data.pyg.org/whl/torch-2.1.1+cu118.html
+pip install git+https://github.com/aron-bram/PFNs@f875a21
+pip install matplotlib
+```
+```sh
+```
+Optionally install dev tools:
+```sh
+pip install pytest ruff black isort
 ```
 
 ### 4. Verify Installation
 
 To ensure everything is set up correctly, run:
 ```sh
-pytest tests
+cd scripts
+python train.py --pfn_epochs 2 --pfn_steps_per_epoch 1
 ```
-If all tests pass, the installation was successful.
-📂 Project Structure
+You should see the following output at the end of the run:
+```sh
+Successfully trained PFN on 2 samples from the prior, and saved it under prior_fitted_model
+```
+Using the command above, this output means that you successfully trained a pfn on 2 datasets, which is saved
+
+## 📂 Project Structure:
 ```sh
 graph-pfn/
 │── scripts/            # Source code
