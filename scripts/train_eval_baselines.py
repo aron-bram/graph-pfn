@@ -1,5 +1,7 @@
 """This file contains the training and evaluation of some GNNs and an MLP baseline.
 
+See installation instructions and other relevant doc in train.py.
+
 To run this file with the default settings:
 
 `python baseline_training.py`

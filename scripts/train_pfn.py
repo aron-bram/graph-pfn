@@ -46,22 +46,27 @@ the prior.
 ### RUNNING INSTRUCTIONS:
 
 # optionally create a virtual environment
-python -m venv ~/venv/pfn_gnn
-source ~/venv/pfn_gnn/bin/activate
+python3.10 -m venv venv
+source venv/bin/activate
 
 # then install the project requirements in your environment:
 pip install --upgrade pip setuptools wheel
 pip install torch==2.1.1 --index-url https://download.pytorch.org/whl/cpu
 pip install torch_geometric==2.4.0
-pip install torch_scatter torch-sparse==0.6.16 -f https://data.pyg.org/whl/torch-2.1.1+cpu.html
+pip install torch_scatter==2.1.2 torch-sparse==0.6.17 -f https://data.pyg.org/whl/torch-2.1.1+cpu.html
 pip install git+https://github.com/aron-bram/PFNs@f875a21
-pip install matplotlib, pytest
+pip install matplotlib
 
-# after successfully installing the packages above, make sure you are in the
-# directory where this file called gnn_prior_fitting.py is located first
+# optional dev install
+pip install pytest ruff black isort
 
-# run this file using the command
-python gnn_prior_fitting.py
+# after successfully installing the packages above, make sure you are in the scripts dir
+
+# to run a very quick training to test if things are working, use the command
+python train_pfn.py --pfn_epochs 2 --pfn_steps_per_epoch 1
+
+# to train the PFN with its default settings, run:
+python train_pfn.py
 
 
 ### OUTPUT:
@@ -1210,7 +1215,9 @@ def train_pfn_on_prior():
     # save the trained model on disc
     torch.save(model, Output.output_folder / "model.pth")
     print(
-        f"Successfully trained PFN on the prior, and saved it under {Output.output_folder}."
+        f"Successfully trained PFN on "
+        f"{args.pfn_epochs * args.pfn_steps_per_epoch * args.batch_size} "
+        f"samples from the prior, and saved it under {Output.output_folder}"
     )
 
 

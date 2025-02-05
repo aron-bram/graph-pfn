@@ -1,6 +1,9 @@
 """This file contains the evaluation code for the PFN.
 
-The functions also work with other models, not just exclusively with PFN.
+See installation instructions and other relevant doc in train.py.
+
+To run this file, first train.py needs to be executed, or at least a model.pth has to
+be present under the prior_fitted_model directory.
 
 RUNNING INSTRUCTIONS:
 python evaluate_pfn.py
