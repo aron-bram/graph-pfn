@@ -29,25 +29,21 @@ pip install --upgrade pip setuptools wheel
 ```
 Then, install the required dependencies:
 ```sh
-pip install -e .
+pip install -r requirements.txt
 ```
-For development tools (formatting, linting, testing), install with:
-```sh
-pip install -e .[dev]
-```
+
 ### 4. Verify Installation
 
 To ensure everything is set up correctly, run:
 ```sh
-pytest
+pytest tests
 ```
 If all tests pass, the installation was successful.
 📂 Project Structure
 ```sh
 graph-pfn/
-│── src/graph_pfn/      # Source code
+│── scripts/            # Source code
 │── tests/              # Test scripts
-│── pyproject.toml      # Project configuration
 │── README.md           # Installation guide (this file)
 │── requirements.txt    # Alternative dependency file
 │── venv/               # (Optional) Virtual environment
@@ -57,25 +53,25 @@ graph-pfn/
 
 To start training a PFN model:
 ```sh
-python src/train_pfn.py
+python scripts/train_pfn.py
 ```
 ### Evaluate a Model
 
 To start evaluating a trained PFN model:
 ```sh
-python src/evaluate_pfn.py
+python scripts/evaluate_pfn.py
 ```
 ### Train and evaluate baselines
 
 To train and evaluate other models on benchmarks:
 ```sh
-python src/train_eval_baselines.py
+python scripts/train_eval_baselines.py
 ```
 ### Run Tests
 
 To run all tests using pytest:
 ```sh
-pytest
+pytest tests
 ```
 ## ⚙️ Troubleshooting
 
