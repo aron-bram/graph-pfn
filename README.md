@@ -32,7 +32,7 @@ pip install --upgrade pip setuptools wheel
 pip install torch==2.1.1 --index-url https://download.pytorch.org/whl/cpu
 pip install torch_geometric==2.4.0
 pip install torch_scatter==2.1.2 torch-sparse==0.6.17 -f https://data.pyg.org/whl/torch-2.1.1+cpu.html
-pip install git+https://github.com/aron-bram/PFNs@f875a21
+pip install git+https://github.com/automl/PFNs
 pip install matplotlib
 ```
 Alternatively, when running on GPU with cuda 11.8 support, run these commands instead:
@@ -41,7 +41,7 @@ pip install --upgrade pip setuptools wheel
 pip install torch==2.1.1 --index-url https://download.pytorch.org/whl/cu118
 pip install torch_geometric==2.4.0
 pip install torch_scatter==2.1.2 torch-sparse==0.6.17 -f https://data.pyg.org/whl/torch-2.1.1+cu118.html
-pip install git+https://github.com/aron-bram/PFNs@f875a21
+pip install git+https://github.com/automl/PFNs
 pip install matplotlib
 ```
 Optionally install dev tools:
