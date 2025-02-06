@@ -108,12 +108,11 @@ pytest test_sampler.py
 ```
 ## ⚙️ Troubleshooting
 
-If torch_sparse or torch_scatter fails to install, ensure you're using the correct index:
+If torch_sparse or torch_scatter fails to install, ensure you're using the correct index when running on a CPU:
 
 pip install torch_scatter==2.1.2 torch-sparse==0.6.16 -f https://data.pyg.org/whl/torch-2.1.1+cpu.html
 
-If imports fail, check that src/graph_pfn/ contains an __init__.py file.
-Ensure you're using Python 3.10+.
+Ensure you're using Python 3.10. The installation doesn't work with 3.13 as of now, but should but 3.11 and 3.12 should do, albeit I haven't tested with those versions.
 
 ## 📝 License
 
